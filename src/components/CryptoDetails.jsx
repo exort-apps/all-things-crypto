@@ -8,11 +8,14 @@ import { MoneyCollectOutlined, DollarCircleOutlined, FundOutlined, ExclamationCi
 const { Title, Text } = Typography;
 const { Option } = Select;
 
+
+
 const CryptoDetails = () => {
-    const { coinId } = useParams();
+    const { uuid } = useParams();
+
     return (
         <div>
-            CryptoDetails {coinId}
+            CryptoDetails { uuid }
         </div>
     )
 }
