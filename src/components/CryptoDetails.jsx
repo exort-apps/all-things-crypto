@@ -16,6 +16,8 @@ const CryptoDetails = () => {
     const { data, isFetching } = useGetCryptoDetailsQuery(uuid);
     const cryptoDetails = data?.data?.coin;
 
+    if (isFetching) return "Loading..."
+
     const time = ['3h', '24h', '7d', '30d', '1y', '3m', '3y', '5y',];
     
     const stats = [
@@ -39,10 +41,10 @@ const CryptoDetails = () => {
         <Col className="coin-detail-container">
             <Col className="coin-heading-container">
                 <Title level={2} className="coin-name">
-                    {cryptoDetails.name} ({cryptoDetails.slug}) Price
+                    {cryptoDetails?.name} ({cryptoDetails?.slug}) Price
                 </Title>
                 <p>
-                    {cryptoDetails.name} live price in US dollars other statistics.
+                    {cryptoDetails?.name} live price in US dollars other statistics.
                 </p>
             </Col>
             <Select
@@ -57,7 +59,7 @@ const CryptoDetails = () => {
                 <Col className="coin-value-statistics">
                     <Col className="coin-value-statistics-heading">
                         <Title level={3} className="coin-details-heading">
-                            {cryptoDetails.name} value statistics
+                            {cryptoDetails?.name} value statistics
                         </Title>
                         <p>
                             A brief overview of this cryptocurrency's stats
@@ -76,7 +78,7 @@ const CryptoDetails = () => {
                 <Col className="other-stats-info">
                     <Col className="coin-value-statistics-heading">
                         <Title level={3} className="coin-details-heading">
-                            Other {cryptoDetails.name} stats
+                            Other {cryptoDetails?.name} stats
                         </Title>
                         <p>
                             A brief overview of this cryptocurrency's stats
@@ -96,15 +98,15 @@ const CryptoDetails = () => {
             <Col className="coin-desc-link">
                 <Row className="coin-desc">
                     <Title level={3} className="coin-details-heading">
-                        What is {cryptoDetails.name}
-                        {HTMLReactParser(cryptoDetails.description)}
+                        What is {cryptoDetails?.name}
+                        {HTMLReactParser(cryptoDetails?.description)}
                     </Title>
                 </Row>
                 <Col className="coin-links">
                     <Title level={3} className="coin-details-heading">
-                        {cryptoDetails.name} Links
+                        {cryptoDetails?.name} Links
                     </Title>
-                    {cryptoDetails.links.map((link) => (
+                    {cryptoDetails?.links.map((link) => (
                         <Row className="coin-link">
                             <Title level={5} className="link-name" key={link}>
                                 {link.type}
