@@ -34,7 +34,7 @@ const Homepage = () => {
 
             <div className="home-heading-container">
                 <Title level={2} className="home-title">Latest news in the crypto sphere</Title>
-                <Title level={3} className="show-more"><Link to="/news">Show them all</Link></Title>
+                <Title level={3} className="show-more"><Link to="/news">Show all news</Link></Title>
             </div>
             <News simplified />
         </>

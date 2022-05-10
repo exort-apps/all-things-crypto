@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import { Layout, Typography, Space } from 'antd';
 import { CopyrightOutlined } from '@ant-design/icons';
 
-// import Navbar from './components/Navbar';
 import { Navbar, Exchanges, Homepage, Cryptocurrencies, News, CryptoDetails } from './components';
 import './App.css';
 import { SpaceContext } from 'antd/lib/space';
@@ -43,7 +42,6 @@ const App = () => {
                         <Link to="/news">News</Link>
                     </Space>
                 </div>
-
             </div>
         </div>
     )
