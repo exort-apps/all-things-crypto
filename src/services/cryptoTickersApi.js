@@ -2,7 +2,7 @@ import { createApi, fetchBaseQuery } from '@reduxjs/toolkit/query/react';
 
 const cryptoTickersApiHeaders = {
     'X-RapidAPI-Host': 'coinlore-cryptocurrency.p.rapidapi.com',
-    'X-RapidAPI-Key': 'f2e5e3b4efmsh454f529d222575bp110753jsn858033462674'
+    'X-RapidAPI-Key': process.env.REACT_APP_RAPIDAPI_COINLORE_API_KEY
 }
 
 const baseUrl = 'https://coinlore-cryptocurrency.p.rapidapi.com'
