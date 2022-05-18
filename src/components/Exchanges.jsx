@@ -12,7 +12,7 @@ const Exchanges = () => {
 
     const { data, isFetching } = useGetTickersQuery();
     const exchangeTicker = data?.data?.tickers;
-    if (isFetching) return 'Loading...';
+    if (isFetching) return 'This page is under construction...';
 
     return (
         <>
